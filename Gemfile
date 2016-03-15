@@ -9,6 +9,7 @@ gem "database_cleaner"
 gem "selenium-webdriver"
 end
 
+gem 'pg'
 gem 'bower-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
