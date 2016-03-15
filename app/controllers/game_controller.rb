@@ -1,4 +1,4 @@
-class PingpongController < ApplicationController
+class GameController < ApplicationController
 
   def new
   end
@@ -11,5 +11,4 @@ class PingpongController < ApplicationController
 
   def delete
   end
-  
 end
