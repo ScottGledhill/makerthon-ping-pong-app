@@ -1,4 +1,7 @@
-class GameController < ApplicationController
+class GamesController < ApplicationController
+
+  def index
+  end
 
   def new
   end
@@ -6,9 +9,12 @@ class GameController < ApplicationController
   def create
   end
 
-  def update
+  def show
   end
 
-  def delete
+  def edit
+  end
+
+  def destroy
   end
 end
