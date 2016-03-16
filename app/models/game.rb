@@ -1,3 +1,3 @@
 class Game < ActiveRecord::Base
-  has many :players
+  has_many :players
 end
