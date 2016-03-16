@@ -2,8 +2,7 @@ class PlayersController < ApplicationController
 
   def index
     players = Player.all
-    list = JSON.parse(players)
-    p list
+    p players
   end
 
   def show
