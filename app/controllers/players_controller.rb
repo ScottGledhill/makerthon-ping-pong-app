@@ -1,11 +1,10 @@
 class PlayersController < ApplicationController
 
   def index
-    players = Player.all
-    p players
+    render json: Player.all
   end
 
   def show
-    api = RestClient.get(https://slack.com/api/usersdw.list)
+    # api = RestClient.get(https://slack.com/api/usersdw.list)
   end
 end

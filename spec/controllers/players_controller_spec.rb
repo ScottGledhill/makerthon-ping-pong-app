@@ -3,7 +3,7 @@ require 'spec_helper'
 describe PlayersController do
   it "returns all the players" do
     FactoryGirl.create :player, name: "HANNAH"
-    get "/", {}, { "Accept" => "application/json" }
+    get('/')
 
     expect(response.status).to eq 200
 
