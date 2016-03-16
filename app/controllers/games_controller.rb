@@ -8,6 +8,8 @@ class GamesController < ApplicationController
   end
 
   def create
+    @game.new = Game.new(game_params)
+    if @game.winner == Player.name && @game.loser == Player.name
     @game = Game.create(game_params)
   end
 
@@ -23,6 +25,7 @@ class GamesController < ApplicationController
   end
 
   def destroy
+
   end
 
   private

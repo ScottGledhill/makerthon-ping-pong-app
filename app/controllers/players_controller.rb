@@ -1,7 +1,7 @@
 class PlayersController < ApplicationController
 
   def index
-    render json: Player.all
+    @player = render json: Player.select('name')
   end
 
   def show
