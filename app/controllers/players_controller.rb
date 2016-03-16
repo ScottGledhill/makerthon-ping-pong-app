@@ -6,6 +6,6 @@ class PlayersController < ApplicationController
   end
 
   def show
-
+    api = RestClient.get(https://slack.com/api/usersdw.list)
   end
 end

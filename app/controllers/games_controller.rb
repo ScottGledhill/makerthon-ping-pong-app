@@ -14,7 +14,7 @@ class GamesController < ApplicationController
   end
 
   def update
-    if @game.update(params[:winner]) && @game.update(params[:loser])
+    if @game.update(game_params)
       render json: @game
     else
       render json: @game
@@ -22,5 +22,11 @@ class GamesController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def game_params
+    params.require(:game).permit(:winner, :loser)
   end
 end
