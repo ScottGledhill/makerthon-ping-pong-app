@@ -6,8 +6,9 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
     if Player.exists?(name: [@game.winner, @game.loser])
       @game.save
+      render json: @game, status: :created, location: @game
     else
-      render :status => 400
+      render json: @game.errors, status: :unprocessable_entity
     end
   end
 
