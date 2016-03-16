@@ -8,17 +8,18 @@ class GamesController < ApplicationController
   end
 
   def create
-    if @game.update(game_params)
-      render json: @game
-    else
-      render json: @game
-    end
+    @game = Game.create(game_params)
   end
 
   def show
   end
 
   def update
+    # if @game.update(game_params)
+    #   render json: @game
+    # else
+    #   render json: @game
+    # end
   end
 
   def destroy
