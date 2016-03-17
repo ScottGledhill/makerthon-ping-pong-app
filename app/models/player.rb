@@ -14,6 +14,6 @@ class Player < ActiveRecord::Base
   def self.calculate_win_percentage(player)
     wins = Player.find_by(name:player).wins
     losses = Player.find_by(name:player).losses
-    Player.find_by(name: player).update_all((wins/(wins + losses)).to_f * 100).round(2)
+    Player.find_by(name: player).update_columns(win_percentage: ((wins /(wins + losses.to_f)) * 100).round(2))
   end
 end
