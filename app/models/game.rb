@@ -1,13 +1,21 @@
 class Game < ActiveRecord::Base
   has_many :players
-  after_save :update_wins
-  after_save :update_losses
+  after_save :update_player
 
-  def update_wins
-    self.players.update_wins!
+
+
+  def update_player
+    Player.update_results(winner, loser)
+
+    # winner_id = Player.find_by(name:winner).id
+    # Player.increment_counter(:wins, winner_id)
   end
 
-  def update_losses
-    self.players.update_losses!
-  end
+  # def update_losses
+  #   loser_id = Player.find_by(name:loser).id
+  #   Player.increment_counter(:losses, loser_id)
+  # e
+
+  # feature envy
+  # nd
 end
