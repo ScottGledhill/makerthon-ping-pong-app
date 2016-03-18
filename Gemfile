@@ -11,6 +11,7 @@ end
 
 gem 'rack-cors', :require => 'rack/cors'
 gem 'responders', '~> 2.0'
+gem 'dotenv-rails'
 
 gem 'pg'
 gem 'bower-rails'

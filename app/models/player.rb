@@ -16,4 +16,17 @@ class Player < ActiveRecord::Base
     losses = Player.find_by(name:player).losses
     Player.find_by(name: player).update_columns(win_percentage: ((wins /(wins + losses.to_f)) * 100).round(2))
   end
+
+  def self.add_slack_users
+    uri = URI.parse("https://slack.com/api")
+    http = Net::HTTP.new(uri.host, uri.port)
+    request = Net::HTTP::Get.new("/users.list?token="+ENV['TOKEN']+"&pretty=1")
+    response = http.request(request)
+    parsed_matches = JSON.parse(response.body)["id"]
+    parsed_matches.each do |key, val|
+      if val != "slackbot" && !Player.exists?(val)
+        Player.create(name: val, wins: 0, losses: 0, win_percentage: 0)
+      end
+    end
+  end
 end
